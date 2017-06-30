@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Design Multimídia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!-- css -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/galeria.css" rel="stylesheet">
+    <link href="js/hover/css/hover.css" rel="stylesheet" media="all">
+	<link href="styleimages.css" rel="stylesheet" type="text/css" />
+	
+  
+    
+    <!-- carroucel -->
+	  <!-- Owl Carousel Assets -->
+    <link href="owl/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl/owl-carousel/owl.theme.css" rel="stylesheet">
+
+
+    <!-- font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <!-- fancybox -->
+
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+    <script>window.jQuery || document.write("<script src='http://picssel.com/scripts/jquery-1.8.3.min.js'>\x3C/script>")</script>
+
+    <script src="http://picssel.com/scripts/fancybox2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="http://picssel.com/scripts/fancybox2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://picssel.com/scripts/fancybox2.1.5/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="http://picssel.com/scripts/fancybox2.1.5/helpers/jquery.fancybox-buttons.css" />
+
+    <script>
+    jQuery(function($){
+      $(".fancybox").fancybox({
+        modal: true,
+        helpers : { buttons: { } }
+      });
+      $(".filter").on("click", function () {
+        var $this = $(this);
+        // if we click the active tab, do nothing
+        if (!$this.hasClass("active")) {
+          $(".filter").removeClass("active");
+          $this.addClass("active"); // set the active tab
+          var $filter = $this.data("rel"); // get the data-rel value from selected tab and set as filter
+          $filter == 'all' ? // if we select "view all", return to initial settings and show all
+            $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() 
+            : // otherwise
+            $(".fancybox").fadeOut(0).filter(function () { 
+              return $(this).data("filter") == $filter; // set data-filter value as the data-rel value of selected tab
+            }).attr("data-fancybox-group", $filter).fadeIn(1000); // set data-fancybox-group and show filtered elements
+        } // if
+      }); // on
+    }); // ready
+    </script>
+
+    <style>
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Nav -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">               
+                <a  href="index.html"><img src="img/logo.png" id="logo"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" id="link" >Home</a>
+                    </li>
+                    <li><a href="quemsomos.html" id="link">Quem Somos</a>
+                    </li>
+                    <li style="Border-bottom:4px solid #f15a29;"><a href="galeria.html" id="link">Galeria</a>
+                    </li>
+                    <li><a href="contato.html" id="link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+    
+    
+<div style="height:59px;"></div>    
+    <div class="section-colored text-center" id="quem1">
+        <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                    <img src="img/galeria.png" id="quemimg">
+                </div>
+            </div>
+    </div>
+</div>   
+
+<div class="container">
+<div class="seta-baixo"> </div>
+</div>
+     
+<!-- Galeria -->
+
+<div class="section-colored text-center" style="margin-top:-15px; position=:relative;">
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+
+                    <div id="galleryTab" class="cf">
+                      <br>
+                      <a data-rel="all" href="javascript:;" class="filter active">Todos</a>
+                      <a data-rel="web" href="javascript:;" class="filter">Web</a>
+                      <a data-rel="video" href="javascript:;" class="filter">Video</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<br>
+    <div id="demo">
+        <div id="owl-demo" class="owl-carousel">
+ 
+        <div>
+           <a class='fancybox imgContainer' href="img/fotos/04.jpg"  data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/04.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="img/fotos/05.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/05.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href="img/fotos/08.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/08.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="img/fotos/09.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/09.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href="img/fotos/10.jpg"  data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/10.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="img/fotos/11.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/11.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href="img/fotos/12.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/12.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="img/fotos/13.jpg"  data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/13.jpg"  alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href="img/fotos/14.jpg" data-fancybox-group='gallery' data-filter='web' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/14.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="img/fotos/15.jpg" data-fancybox-group='gallery' data-filter='video' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/15.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href='img/fotos/16.jpg' data-fancybox-group='gallery' data-filter='video' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/16.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href='img/fotos/17.jpg' data-fancybox-group='gallery' data-filter='video' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/17.jpg" alt="" id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+         <div>
+           <a class='fancybox imgContainer' href='img/fotos/18.png' data-fancybox-group='gallery' data-filter='video' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="img/fotos/18.png" alt="" id="image"><p>Clique para ampliar</p></div></div></a>
+
+          <a class='fancybox imgContainer' href="" data-fancybox-group='gallery' data-filter='video' id="image"/> <div id="legenda">
+           <div class="legenda"><img src="" alt=""id="image"><p>Clique para ampliar</p></div></div></a>       
+         </div>
+
+
+        
+         
+     </div>
+
+    <script src="owl/assets/js/jquery-1.9.1.min.js"></script> 
+    <script src="owl/owl-carousel/owl.carousel.js"></script>
+
+    <!-- Demo -->
+</div>
+    <style>
+    #owl-demo .owl-item > div img {
+    display: block;
+    width: 100%;
+    height: auto;
+ 
+    }
+    #owl-demo .owl-item > div {
+    
+    }
+    </style>
+
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        navigation : true,
+            lazyLoad : true,
+
+      });
+    });
+
+    </script>
+    
+
+    <script src="owl/assets/js/bootstrap-collapse.js"></script>
+    <script src="owl/assets/js/bootstrap-transition.js"></script>
+    <script src="owl/assets/js/bootstrap-tab.js"></script>
+
+    <script src="owl/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="owl/assets/js/application.js"></script>
+
+
+
+<br><br>
+
+<footer>
+<div id="roda">
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-6 column" >
+            <img src="img/logo2.png" id="logo2">
+            <div id="logo3" align="center"><img src="img/logo2.png" id="logo4"></div>
+        </div>
+        <div class="col-md-6 column" id="menu2">
+            <ul id="rodapeli">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+         <div align="center">   <ul id="rodapeli2">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+</div>
+
+<div class="container" >
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<img src="img/dombosco.jpg" id="dombosco">
+		</div>
+		<div class="col-md-6 column">
+           <div id="social" align="center">
+			<a href="#"><li><div id="facebook1"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook1"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook1"><img src="img/insta.png"></div></li></a>
+        </div>
+        
+        <div id="socialmobile" align="center">
+			<a href="#"><li><div id="facebook"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook"><img src="img/insta.png"></div></li></a>
+        </div>
+            
+		</div>
+	</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

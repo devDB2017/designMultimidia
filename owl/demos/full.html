@@ -1,0 +1,204 @@
+  <!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Owl Carousel - Full Width Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="jQuery Responsive Carousel - Owl Carusel">
+    <meta name="author" content="Bartosz Wojciechowski">
+    
+
+
+    <!-- Owl Carousel Assets -->
+    <link href="../owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="../owl-carousel/owl.theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://picssel.com/demos/demos.css" />
+<link rel="stylesheet" type="text/css" href="http://picssel.com/scripts/fancybox2.1.5/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="http://picssel.com/scripts/fancybox2.1.5/helpers/jquery.fancybox-buttons.css" />
+<style type="text/css">
+/* this demo specifc styles */
+.imgContainer {
+
+  overflow: hidden;
+  text-align: center;
+  margin: 5px 5px 5px 0;
+  float: left;
+
+  display: block;
+}
+.imgContainer:hover{
+ 
+}
+#galleryTab {
+  margin: 10px 5px 20px 0;
+  top: 26px;
+  width: 450px;
+}
+.galleryWrap {
+  padding: 0 0 30px;
+}
+.filter {
+  border: 1px solid #ccc;
+  color: #333333;
+  float: left;
+  font-size: 12px;
+  margin: 0 12px 0 0;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+ -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+         border-radius: 3px;
+}
+.filter:hover {
+  background-color: #f8f8f8;
+ -webkit-box-shadow: -2px 2px 5px 1px #a3a3a3;
+    -moz-box-shadow: -2px 2px 5px 1px #a3a3a3;
+         box-shadow: -2px 2px 5px 1px #a3a3a3;
+  margin: -1px 11px 1px 1px;
+  border-bottom: solid 1px #aaa;
+  border-left: solid 1px #aaa;
+}
+.filter.active {
+  background-color: #e2e2e2;
+  border: 1px solid #ccc;
+  color: #000;
+  cursor: default;
+  margin: 0 12px 0 0;
+ -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+         box-shadow: none;  
+}
+</style>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write("<script src='http://picssel.com/scripts/jquery-1.8.3.min.js'>\x3C/script>")</script>
+<script src="http://picssel.com/scripts/fancybox2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://picssel.com/scripts/fancybox2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+<script>
+jQuery(function($){
+  $(".fancybox").fancybox({
+    modal: true,
+    helpers : { buttons: { } }
+  });
+  $(".filter").on("click", function () {
+    var $this = $(this);
+    // if we click the active tab, do nothing
+    if (!$this.hasClass("active")) {
+      $(".filter").removeClass("active");
+      $this.addClass("active"); // set the active tab
+      var $filter = $this.data("rel"); // get the data-rel value from selected tab and set as filter
+      $filter == 'all' ? // if we select "view all", return to initial settings and show all
+        $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() 
+        : // otherwise
+        $(".fancybox").fadeOut(0).filter(function () { 
+          return $(this).data("filter") == $filter; // set data-filter value as the data-rel value of selected tab
+        }).attr("data-fancybox-group", $filter).fadeIn(1000); // set data-fancybox-group and show filtered elements
+    } // if
+  }); // on
+}); // ready
+</script>
+
+
+
+  <body>
+
+      <div id="demo">
+
+<div id="container">
+<div id="galleryTab" class="cf">
+  <a data-rel="all" href="javascript:;" class="filter active">Todos</a>
+  <a data-rel="web" href="javascript:;" class="filter">Web</a>
+  <a data-rel="video" href="javascript:;" class="filter">Video</a>
+</div>
+
+</div>
+
+        <div id="owl-demo" class="owl-carousel">
+    <div>
+       <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'> <img src="beetlejuice.jpg" alt="" /></a>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'> <img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+     <div>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+       <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'>  <img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+     <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'> <img src="beetlejuice.jpg" alt="" /></a>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'> <img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+
+     <div>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+       <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'>  <img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+
+     <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'> <img src="beetlejuice.jpg" alt="" /></a>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'> <img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+
+     <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'><img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+
+      <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'><img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+
+      <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'><img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+
+      <div>
+        <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='web'><img src="beetlejuice.jpg" alt="" /></a>
+         <a class='fancybox imgContainer' href='./gallery/architecture/lorenteJerome_barcelona.jpg' data-fancybox-group='gallery' data-filter='video'><img src="beetlejuice2.jpg" alt="" /></a>
+    </div>
+    
+
+    </div>
+
+    <script src="../assets/js/jquery-1.9.1.min.js"></script> 
+    <script src="../owl-carousel/owl.carousel.js"></script>
+
+    <!-- Demo -->
+
+    <style>
+    #owl-demo .owl-item > div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom:4px;
+}
+#owl-demo .owl-item > div {
+    padding: 0px 2px
+}
+    </style>
+
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        navigation : true
+      });
+    });
+
+    </script>
+    
+
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+	  <script src="../assets/js/application.js"></script>
+
+  </body>
+</html>

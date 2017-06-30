@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Design Multimídia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+	<!-- font -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style type="text/css">
+		* {margin:0; padding: 0; font-family	font-family: 'Yanone Kaffeesatz', sans-serif;}
+		html, body {height:100%;}
+
+		/** formata elementos que tem backgrounds parallax **/
+		.bgParallax {
+			font-family: 'Elsie', cursive;
+			color:#FFF;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1920px;
+			position: relative;
+			height: 40%;
+			text-shadow:0 0 10px rgba(0,0,0,0.7);
+			background-position: 50% 0;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+		.bgParallaxx {
+			font-family: 'Elsie', cursive;
+			color:#FFF;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1920px;
+			position: relative;
+			height: 40%;
+			text-shadow:0 0 10px rgba(0,0,0,0.7);
+			background-position: 50% 0;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+
+		/* Define backgrounds dos divs */
+		#quemsomos {background-image: url(bg2.jpg);}
+		#missao {
+			background-image:url(0404_010.jpg);
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		}
+		#missaoo {
+			background-image:url(0404_010.jpg);
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		display:none;
+		}
+
+		/** Formata o article que vai o texto **/
+		.bgParallax article {
+		  width: 70%;
+		  text-align: center;
+		  margin:0 auto;
+		  padding:20% 0 0;
+		}
+
+		/** formata texto **/
+		article h1 {font-size:40px;}
+		article p {line-height: 30px; font-size:20px; margin-top:15px;}
+		article p a {color:#FFF; text-decoration:none; font-size:30px;}
+
+@media screen and (max-width: 800px) {
+	#missao {
+			background-image:url(0404_010.jpg);
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		display:none;
+		}
+		#missaoo {
+			background-image:url(0404_010.jpg);
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		display:block;
+		background-size:cover;
+		}
+}
+	</style>
+	<script type="text/javascript">
+
+$(document).ready(function(){
+$('div.bgParallax').each(function(){
+	var $obj = $(this);
+
+	$(window).scroll(function() {
+		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+
+		var bgpos = '50% '+ yPos + 'px';
+
+		$obj.css('background-position', bgpos );
+
+	}); 
+});	
+});
+	</script>
+	<!-- css -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <link href="js/hover/css/hover.css" rel="stylesheet" media="all">
+	<link href="css/styleimages.css" rel="stylesheet" type="text/css" />
+	
+    <!-- java -->
+  
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+ <!-- slide -->
+    <link rel="stylesheet" href="img/slide/css/vendor/normalize.css">
+  	<link rel="stylesheet" href="img/slide/dist/gallery.css">
+  	<link rel="stylesheet" href="img/slide/dist/gallery.theme.css">
+  	<script src="img/slide/js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+<!-- Nav -->
+
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a  href="index.html"><img src="img/logo.png" id="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" id="link" >Home</a>
+                    </li>
+                    <li><a href="quemsomos.html" id="link">Quem Somos</a>
+                    </li>
+                    <li><a href="galeria.html" id="link">Galeria</a>
+                    </li>
+                    <li style="	border-bottom:4px solid #f15a29;" ><a href="contato.html" id="link">Contato</a>
+                    </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+<div style="height:59px;"></div>    
+ <div class="section-colored text-center" id="quem1">
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+        <img src="img/contato.png" id="quemimg">
+
+		</div>
+	</div>
+</div>
+</div>   
+
+<div class="container">
+<div class="seta-baixo"> </div>
+</div>
+
+<div class="section-colored text-center" id="quemsomos" style="height:55%;">
+
+<div class="container">		
+	<div class="row clearfix">
+		<div class="col-md-6 column" id="quemtext">
+
+
+<form class="form" id="form1">
+      
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nome" id="name" />
+      </p>
+      
+      <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+      </p>
+      
+      <p class="text">
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Mensagem"></textarea>
+      </p>
+      
+      
+      <div class="submit">
+        <input type="submit" value="ENVIAR" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+
+		</div>
+		<div class="col-md-6 column" style=" background:#e6e6e6; heigth:49%;" >
+       <img src="img/cont.png">
+    </div>
+	</div>
+</div>
+</div>
+
+<div class="container" align="center">
+<div class="seta-baixo2"> </div>
+</div>
+    
+    <div id="mapa">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3657.951968657044!2d-46.44817606931152!3d-23.534229892653833!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce66a484412187%3A0xd05bd5933b066335!2sRua+%C3%81lvaro+de+Mendon%C3%A7a%2C+456+-+Itaquera!5e0!3m2!1spt-BR!2sbr!4v1401069797130" width="100%" height="600" frameborder="0" style="border:0"></iframe>
+</div>
+</div>
+</div>
+
+
+    
+</div>
+</div>
+
+<div id="rhome">
+<div id="roda">
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-6 column" >
+            <img src="img/logo2.png" id="logo2">
+            <div id="logo3" align="center"><img src="img/logo2.png" id="logo4"></div>
+        </div>
+        <div class="col-md-6 column" id="menu2">
+            <ul id="rodapeli">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+         <div align="center">   <ul id="rodapeli2">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+</div>
+    
+<div class="container" >
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<img src="img/dombosco.jpg" id="dombosco">
+		</div>
+		<div class="col-md-6 column">
+           <div id="social" align="center">
+			<a href="#"><li><div id="facebook1"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook1"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook1"><img src="img/insta.png"></div></li></a>
+        </div>
+        
+        <div id="socialmobile" align="center">
+			<a href="#"><li><div id="facebook"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook"><img src="img/insta.png"></div></li></a>
+        </div>
+            
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

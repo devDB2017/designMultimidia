@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Design Multimídia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+	<style type="text/css">
+		* {margin:0; padding: 0; }
+		html, body {height:100%;}
+
+		/** formata elementos que tem backgrounds parallax **/
+		.bgParallax {
+			font-family: 'Elsie', cursive;
+			color:#FFF;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1920px;
+			position: relative;
+			height: 40%;
+			text-shadow:0 0 10px rgba(0,0,0,0.7);
+			background-position: 50% 0;
+			background-repeat: repeat;
+			background-attachment: fixed;  transition-duration: 0.2s;
+		}
+		#para1{
+			background:none;
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		}
+		#para2 {
+			background-image:url(img/mac/1.jpg);
+			background-size:cover;
+			max-width:100%;
+		border-top:5px solid #f15a29;
+		border-bottom:2px solid #aeaeae;
+		}
+
+	
+	</style>
+	<script type="text/javascript">
+
+$(document).ready(function(){
+$('div.bgParallax').each(function(){
+	var $obj = $(this);
+
+	$(window).scroll(function() {
+		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+
+		var bgpos = '50% '+ yPos + 'px';
+
+		$obj.css('background-position', bgpos );
+
+	}); 
+});	
+});
+	</script>
+
+	<!-- css -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <link href="js/hover/css/hover.css" rel="stylesheet" media="all">
+	<link href="css/styleimages.css" rel="stylesheet" type="text/css" />
+	
+    <!-- java -->
+  
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<!-- font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <!-- slide -->
+    <link rel="stylesheet" href="img/slide/css/vendor/normalize.css">
+  	<link rel="stylesheet" href="img/slide/dist/gallery.css">
+  	<link rel="stylesheet" href="img/slide/dist/gallery.theme.css">
+  	<script src="img/slide/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+<!-- Nav -->
+
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a  href="index.html"><img src="img/logo.png" id="logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li style="	border-bottom:4px solid #f15a29;"><a href="index.html" id="link" >Home</a>
+                    </li>
+                    <li><a href="quemsomos.html" id="link">Quem Somos</a>
+                    </li>
+                    <li><a href="galeria.html" id="link">Galeria</a>
+                    </li>
+                    <li><a href="contato.html" id="link">Contato</a>
+                    </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+<div class="gallery autoplay items-3" style="height:auto;">
+    <div id="item-1" class="control-operator"></div>
+    <div id="item-2" class="control-operator"></div>
+    <div id="item-3" class="control-operator"></div>
+
+    <figure class="item ">
+      <img src="img/mac/3.jpg" alt="slide1" id="imgslide">
+    </figure>
+
+    <figure class="item">
+      <img src="img/mac/5.jpg" alt="slide1" id="imgslide">
+    </figure>
+
+    <figure class="item">
+      <img src="img/mac/4.jpg" alt="slide1" id="imgslide">
+    </figure>
+
+    <div class="controls">
+      <a href="#item-1" class="control-button">•</a>
+      <a href="#item-2" class="control-button">•</a>
+      <a href="#item-3" class="control-button">•</a>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+<!-- sobre o curso -->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-7 column">
+        <img src="img/title1.png" id="title">
+        <p>
+        Formar os educandos para desenvolverem a criatividade e a preparação da linguagem visual, para que possam produzir arquivos digitais multimídia (com textos, hipertextos, sons, ilustração, imagens estáticas e em movimento). 
+Criar condições para que os mesmos saibam aplicar este conhecimento no mercado de trabalho em projetos de sites de internet e vídeos digitais editados por computador.
+        </p>
+		</div>
+		<div class="col-md-4 column" id="cursos">
+        <a href="#" > <img src="img/web icon.png" id="web"></a>
+         <a href="http://www.youtube.com/watch?v=RPycALjQVRY&list=PLHV3nMIXiR79cscs0wfuNkChXfrnEIRh3" ><img src="img/video icon.png" id="video" target="_blank"> </a>
+		</div>
+	</div>
+ 
+ </div>
+ 
+<!-- Titulo 2 -->
+
+<div class="section-colored text-center" id="title1">
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<img src="img/nossocurso.png" id="nosso">
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- Topicos --> 
+
+<div class="container">
+	<div class="row clearfix" align="center" id="topicos">
+		<div class="col-md-4 column">
+        <img src="img/objetivo.png"> 
+        <img src="img/objetivotitle.png" id="topictitle">
+        <p>Formar os educandos para desenvolverem a criatividade e a percepção da linguagem visual, para que possam produzir arquivos digitais multimídia (com textos, hipertextos, sons, ilustrações, imagens estáticas e em movimento). Criar condições para que os mesmos saibam aplicar este conhecimento no mercado de trabalho em projetos de sites de internet e vídeos digitais editados por computador.</p>
+     
+
+		</div>
+		<div class="col-md-4 column">
+        <img src="img/profissional.png">
+        <img src="img/profissionaltitlle.png" id="topictitle">
+        <p>Estará capacitado para atuar no desenvolvimento de interfaces gráficas interativas envolvendo vídeo, imagem e som; produção de ilustrações e animações; produção de videoclipes; efeitos visuais e sonoros; elaboração de paginas Web; apoio a propaganda e marketing.
+</p>
+		</div>
+		<div class="col-md-4 column">
+        <img src="img/mercado.png">
+        <img src="img/mercadotitlle.png" id="topictitle">
+        <p>Produtoras de vídeo, emissoras de televisão, agências de propaganda ou de criacao de sites, auto empreendendorismo.
+</p>
+		</div>
+        <div class="col-md-4 column">
+        <img src="img/experiencia.png">
+        <img src="img/experienciatitle.png" id="topictitle">
+<li>- Escolaridade mínima: 8ª série</li>
+<li>- Duração do curso: 1 semestre</li>
+<li>- Período: manhã, tarde e noite</li>
+<li>- Idade mínima: 15 anos (manhã e tarde), 18 anos (noite)</li>
+<li>- Carga Horária: 400 horas (manhã e tarde), 300 horas (noite)</li>        
+		</div>
+	</div>
+</div>
+
+<!-- Parallax image -->
+
+<div id="para2" class="bgParallax" data-speed="20"></div>
+
+
+<!-- Aplle -->
+<div class="section-colored" id="applesection" style="height:auto; padding:28px 0px 20px 0px;">
+<div class="container" id="appletext">
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-8 column">
+		
+				<p>Trabalhamos com a plataforma Macintosh no seu atual sistema operacional Mavericks
+</p>
+			
+		</div>
+		<div class="col-md-4 column" id="apple">
+        <img src="img/apple.png">
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<!-- Titulo 3 -->
+
+<div class="section-colored text-center">
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<img src="img/trabalhos.png" id="trabalhos">
+            <img src="img/trabalhos2.png" id="trabalhos2">
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- Trabalhos -->
+<div class="portfolio">
+
+<!-- Imagem 1 -->
+	<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/003.jpg">
+				<img alt="team" src="img/fotos/003.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+	            </div>
+		</div>
+	</div>
+    
+<!-- Imagem 2 -->
+    <div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/004.jpg">
+				<img alt="team" src="img/fotos/004.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+
+<!-- Imagem 3 -->
+<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/005.jpg">
+				<img alt="team"src="img/fotos/005.jpg">
+			</a>
+            <div class="hover_portfolio">
+          <a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+   
+<!-- Imagem 4 -->
+<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/006.jpg">
+				<img alt="team" src="img/fotos/006.jpg">
+			</a>
+            <div class="hover_portfolio">
+            <a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+    
+<!-- Imagem 5 -->
+	<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/001.jpg">
+				<img alt="team" src="img/fotos/001.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+    
+<!-- Imagem 6 -->
+	<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="img/fotos/002.jpg">
+				<img alt="team" src="img/fotos/002.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+
+<!-- Imagem 7 -->
+	<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="#">
+				<img alt="team" src="img/fotos/001.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+            </div>
+		</div>
+	</div>
+    
+<!-- Imagem 8 -->
+	<div class="team1 col4">
+		<div class="thumb">
+			<a class="imglink" href="#">
+				<img alt="team" src="img/fotos/006.jpg">
+			</a>
+            <div class="hover_portfolio">
+            	<a href="#" class="zoom"></a>
+            </div> 
+		</div>
+	</div>
+            
+</div>
+</div>
+
+<!-- veja mais trabalhos -->
+<div class="container" >
+	<div class="row clearfix">
+		<div class="col-md-12 column"  align="center">
+			   <a href="galeria.html"> <img src="img/psd/veja.png" id="veja" 
+onmouseover="this.src='img/psd/vejahover.png'" 
+onmouseout="this.src='img/psd/veja.png'"></a>
+
+		</div>
+		</div>
+	</div>
+    
+    
+</div>
+</div>
+
+
+<div id="rhome">
+<div id="roda">
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-6 column" >
+            <img src="img/logo2.png" id="logo2">
+            <div id="logo3" align="center"><img src="img/logo2.png" id="logo4"></div>
+        </div>
+        <div class="col-md-6 column" id="menu2">
+            <ul id="rodapeli">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+         <div align="center">   <ul id="rodapeli2">
+            <a href="#"><li style="border-left:0px;">Home</li></a>
+            <a href="#"><li>Quem Somos</li></a>
+            <a href="#"><li>Web Design</li></a>
+            <a href="#"><li>Vídeo</li></a>
+            <a href="#"><li style=" border-right:0px;">Contato</li></a>
+            </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+</div>
+    
+<div class="container" >
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<img src="img/dombosco.jpg" id="dombosco">
+		</div>
+		<div class="col-md-6 column">
+           <div id="social" align="center">
+			<a href="#"><li><div id="facebook1"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook1"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook1"><img src="img/insta.png"></div></li></a>
+        </div>
+        
+        <div id="socialmobile" align="center">
+			<a href="#"><li><div id="facebook"><img src="img/facebook.png"></div></li></a>
+            <a href="#"><li><div id="facebook"><img src="img/twitter.png"></div></li></a>
+			<a href="#"><li><div id="facebook"><img src="img/insta.png"></div></li></a>
+        </div>
+            
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
